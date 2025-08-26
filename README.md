@@ -49,9 +49,3 @@ Add QR codes for individual memories
 Filter gallery by tone or continent
 
 Add user authentication and multi-user support
-
-
-📸 Highlights
-```````````
-![Highlights](images/coverpage.png)
-![AI customization](images/feature_pic.png)
