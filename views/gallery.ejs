@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <style>
+      .empty-message {
+        position: relative;
+        z-index: 1;
+        padding: 2rem;
+        border-radius: 12px;
+        backdrop-filter: blur(8px);
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.05
+        ); /* soft translucent layer */
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #f0f0f0;
+        font-family: "Courier New", monospace;
+        animation: fadeIn 1s ease-in-out;
+        max-width: 80%;
+        margin: 0 auto;
+      }
+
+      .empty-message h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        color: #ffd700;
+      }
+
+      .empty-message p {
+        font-size: 1rem;
+        opacity: 0.8;
+      }
+
+      /* Optional fade-in animation */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <h1 class="gallery-title">Your Memory Gallery</h1>
+    <div
+      class="gallery-container"
+      style="width: 100%; justify-content: center; text-align: center"
+    >
+      <% memories.forEach(({ country, note, photo, tone }) => { %>
+      <div class="memory-card <%= tone %>">
+        <img src="<%= photo %>" alt="Memory from <%= country %>" />
+        <div class="memory-info">
+          <h2><%= country %></h2>
+          <p><%= note %></p>
+          <span class="tone-label"><%= tone %></span>
+        </div>
+      </div>
+      <% }) %> <% if (memories.length === 0) { %>
+      <div class="empty-message">
+        <h2>No memories yet</h2>
+        <p>Let's create some beautiful ones together ✨</p>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>
