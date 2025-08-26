@@ -53,6 +53,5 @@ Add user authentication and multi-user support
 
 📸 Highlights
 ```````````
-![Home](public/images/coverpage.png)
-![AI customization](public/images/feature_pic.png)
-![Home](public/images/memory-gallery.png)
+![Highlights](images/coverpage.png)
+![AI customization](images/feature_pic.png)
